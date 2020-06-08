@@ -1,0 +1,59 @@
+.post {
+	display: block;
+}
+
+.post a {
+	color: inherit;
+}
+
+.post .title {
+	margin-bottom: .88rem;
+}
+
+.post .top {
+	display: flex;
+	align-items: center;
+}
+
+.post .pfp {
+	padding: 6px;
+	font-size: 110%;
+	margin-right: 6px;
+	background-color: #cfd8dc;
+	color: #fff;
+	border-radius: 50%;
+}
+
+.post #username {
+	text-decoration: underline;
+	display: inline-block;
+	color: rgba(0, 0, 0, 0.87);
+	font-size: 1.05rem;
+	font-weight: 500;
+}
+
+.post .date {
+	margin-top: 0.55rem;
+	color: rgba(0, 0, 0, 0.85);
+}
+
+.post .date .material-icons {
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 4px;
+	font-size: 130%;
+	padding: 4px;
+	color: rgba(0, 0, 0, 0.75);
+}
+
+.post #date {
+	font-size: 1.03rem;
+	display: inline-block;
+	vertical-align: middle;
+	color: rgba(0, 0, 0, 0.75);
+}
+
+.post #content {
+	margin: 1rem 0 2rem 0;
+	word-wrap: break-word;
+}

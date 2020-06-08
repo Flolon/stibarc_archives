@@ -1,0 +1,125 @@
+.flex-grow {
+    display: flex;
+    flex-grow: 1;
+}
+
+.vam {
+	vertical-align: middle;
+}
+
+.disable-select {
+    -webkit-user-select: none;  
+    -moz-user-select: none;    
+    -ms-user-select: none;      
+    user-select: none;
+  }
+
+.top-logo {
+    display: block;
+    margin: .5rem auto 0 auto;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.top-logo.sm {
+    display: inline-block;
+    vertical-align: middle;
+    text-decoration: none;
+    height: 50px;
+}
+
+.logo-title {
+    display: inline-block;
+    vertical-align: middle;
+    text-decoration: none;
+    margin-left: 10px;
+    color: #525456;
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+.button {
+    display: inline-block;
+    text-decoration: none;
+    padding: 6px 12px;
+    border: 1px solid rgba(0, 0, 0, 0.28);
+    background-color: #fff;
+    color: inherit;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button.button {
+    font-size: 100%;
+    outline: none;
+}
+
+.button .material-icons {
+	font-size: inherit;
+}
+
+.button:hover {
+    border-color: rgba(0, 0, 0, 0.38);
+}
+
+.button:active {
+    border-color: rgba(0, 0, 0, 0.5);
+}
+
+#ogLink {
+	border-color: rgba(28, 74, 128, 0.8);
+	color: rgba(28, 74, 128, 1);
+}
+
+#ogLink:hover {
+	border-color: rgba(28, 74, 128, 0.85);
+}
+
+#ogLink:active {
+	border-color: rgba(28, 74, 128, 0.92);
+}
+
+/* - Comments - */
+.comment {
+	display: block;
+	position: relative;
+	text-decoration: none;
+	padding: 6px 12px;
+	border: 1px solid #b8b8b8;
+	color: inherit;
+	border-radius: 4px;
+	margin-bottom: 0.35rem;
+	word-wrap: break-word;
+	box-sizing: border-box;
+}
+
+.comment .top {
+	margin-top: 0.15rem;
+	color: rgba(0, 0, 0, 0.69);
+}
+
+.comment .username {
+	text-decoration: underline;
+	color: rgba(0, 0, 0, 0.9);
+	font-weight: 500;
+}
+
+.comment .postId {
+	color: rgba(0, 0, 0, 0.85);
+	font-weight: 500;
+	text-decoration: underline;
+}
+
+.comment .date {
+	color: rgba(0, 0, 0, 0.75);
+}
+
+.comment .content {
+	margin-top: 0.38rem;
+	margin-bottom: 0.3rem;
+}
+
+.comment a {
+	text-decoration: none;
+	color: inherit;
+}

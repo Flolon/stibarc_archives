@@ -1,0 +1,35 @@
+.button.big {
+	font-size: 1.1rem;
+	font-weight: 500;
+}
+
+.stats {
+	margin: 1.75rem 0 1rem 0;
+}
+
+.stats .side {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.stats .side div {
+	font-size: 1.2rem;
+	font-weight: 500;
+}
+
+.stats .num {
+	font-size: 1.75rem;
+	font-weight: 700;
+}
+
+.stats .sub {
+	margin-top: 0.7rem;
+	font-size: 1.15rem;
+	font-weight: 400;
+}
+
+.stats .divide {
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 1rem;
+}

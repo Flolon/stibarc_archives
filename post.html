@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        
+        <link rel="icon" type="image/png" href="./assets/images/fav.png">
+        <title>STiBaRC Archives</title>
+        <meta name="description" content="An updating archive of STiBaRC posts and comments">
+        
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://apis.buncode.com/css/default.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="./assets/css/global.css">
+        <!-- custom -->
+        <link rel="stylesheet" href="./assets/css/post.css">
+
+    </head>
+    <body class="container">
+
+        <br>
+        <a href="./"><img class="top-logo sm" src="./assets/images/logo.png"><span class="logo-title">STiBaRC Archives</span></a>
+
+        <div class="post">
+
+            <h1 id="title" class="title">Loading...</h1>
+            <div class="top">
+                <div class="username">
+                    <span class="material-icons vam pfp"> person </span><a href="#" id="username">Loading...</a>
+                </div>
+                <span class="flex-grow"></span>
+                <a id="jsonLink" class="button" href="./json/post/?id=">JSON</a>&nbsp;<a id="ogLink" class="button" href="https://stibarc.com" target="_blank">Current&nbsp;<span class="material-icons vam"> open_in_new </span></a>
+            </div>
+            <div class="date">
+                <span class="material-icons vam date-icon"> calendar_today </span><span id="date">Loading...</span>
+            </div>
+            <div id="content">
+                <!-- Post Content -->
+            </div>
+
+        </div>
+
+        <div style="display: flex; align-items: center;">
+            <h2 class="title"><span class="material-icons vam"> comment </span>&nbsp;<span id="commentsNum">Comments</span></h2>
+            <span class="flex-grow"></span>
+            <a id="jsonLink2" class="button" href="./json/post/comments/?id=">JSON</a>
+        </div>
+        <div id="comments" style="margin-bottom: 3rem;">
+            <!-- Comments -->
+        </div>
+
+	    <br><br><br>
+
+	    <script src="./assets/js/global.js"></script>
+        <script src="./assets/js/post.js"></script>
+    </body>
+</html>

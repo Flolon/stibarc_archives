@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        
+        <link rel="icon" type="image/png" href="./assets/images/fav.png">
+        <title>All Comments on STiBaRC Archives</title>
+        <meta name="description" content="An updating archive of STiBaRC posts and comments">
+        
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://apis.buncode.com/css/default.css">
+        <link rel="stylesheet" href="./assets/css/global.css">
+
+    </head>
+    <body class="container">
+        <br>
+        <a href="./"><img class="top-logo sm" src="./assets/images/logo.png"><span class="logo-title">STiBaRC Archives</span></a>
+        
+        <div style="display: flex; align-items: center;">
+            <h1>All Comments</h1><span class="flex-grow"></span><a class="button" href="./json/comments/">JSON</a>&nbsp;<button class="button" onclick="loadComments()">Refresh</button>
+        </div>
+
+        <div id="comments">No comments yet</div>
+        <br>
+        <div id="commentsNum"></div>
+        
+        <br><br><br>
+        <script src="./assets/js/global.js"></script>
+        <script src="./assets/js/comments.js"></script>
+    </body>
+</html>
