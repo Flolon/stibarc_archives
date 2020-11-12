@@ -59,12 +59,16 @@ function buildComment(data, type = false) {
 		.replace(/</g, "&lt;")
 		.replace(/>/g, "&gt;")
 		.replace(/\r\n/g, "<br>");
-	if(data.error == 'time') {
+	if(data.error == 'time' || data.error == 'old') {
 		var timeMeta = 'class="date metaError" title="Time is not accurate"';
 	} else {
 		var timeMeta = 'class="date"';
 	}
-	var date = formatDate(toDate(data.date));
+	if(data.error !== 'old') {
+	    var date = formatDate(toDate(data.date));		
+	} else {
+		var date = 'No date';
+	}
 
 	if(type) {
 		var commentItem =
