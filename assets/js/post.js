@@ -59,7 +59,6 @@ req2.onreadystatechange = function () {
 	if (this.readyState == 4 && this.status == 200) {
 		var tmp = null;
 		var tmp = JSON.parse(req2.responseText);
-		console.log(tmp);
 		var commentsCount = Object.keys(tmp).length;
 		var commentsHTML = "";
 		for (var i = 0; i < commentsCount; i++) {

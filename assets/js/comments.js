@@ -4,7 +4,6 @@ req.onreadystatechange = function () {
 	if (this.readyState == 4 && this.status == 200) {
 		var tmp = null;
 		var tmp = JSON.parse(req.responseText);
-		console.log(tmp);
 		var commentsCount = Object.keys(tmp).length;
 		var commentsHTML = "";
 		for (var i = commentsCount - 1; i > -1; i--) {
