@@ -23,5 +23,9 @@ try {
 // page //
 header('Content-Type: application/json');
 
-echo json_encode($result, JSON_PRETTY_PRINT);
+if ($_GET['pp']) {
+    echo json_encode($result, JSON_PRETTY_PRINT);
+} else {
+    echo json_encode($result);
+}
 ?>
