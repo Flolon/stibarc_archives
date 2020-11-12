@@ -3,17 +3,17 @@ var currentTab = getAllUrlParams().tab;
 
 function tab(id, updateUri) {
     if(id == 'comments') {
-        $('posts').style.display = "none";
+        $('postsTab').style.display = "none";
         $('postsLink').classList.remove("active");
-        $('comments').style.display = "block";
+        $('commentsTab').style.display = "block";
         $('commentsLink').classList.add("active");
 	}else {
-        $('comments').style.display = "none";
+        $('commentsTab').style.display = "none";
         $('commentsLink').classList.remove("active");
-        $('posts').style.display = "block";
+        $('postsTab').style.display = "block";
         $('postsLink').classList.add("active");
     } 
-	if(updateUri) { window.history.pushState(null, id, '?id='+username+'&tab='+id); }
+	//if(updateUri) { history.pushState({}, '', '?id='+username+'&tab='+id); }
 }
 
 function tabFromUrl(){
@@ -54,9 +54,19 @@ req.onreadystatechange = function () {
                 postsHTML += buildPost(tmp[i]);
             }
         }else {
-            postsHTML = "<span>No posts</span>";
+            postsHTML = '<b style="color: #2b2b2b;">No posts</b>';
         }
 		$("posts").innerHTML = postsHTML;
+		// post count //
+		var postsNum;
+		if (postsCount == 0) {
+			postsNum = "0 Posts";
+		}else if(postsCount == 1){
+			postsNum = '1 Post';
+		}else {
+			postsNum = postsCount + ' Posts';
+		}
+		$("postsNum").innerHTML = postsNum;
 	}
 };
 
@@ -86,9 +96,19 @@ req2.onreadystatechange = function () {
                 commentsHTML += buildComment(tmp[i], true);
             }
         }else {
-            commentsHTML = "<span>No comments</span>";
+            commentsHTML = '<b style="color: #2b2b2b;">No comments</b>';
         }
 		$("comments").innerHTML = commentsHTML;
+		// comments count //
+		var commentsNum;
+		if (commentsCount == 0) {
+			commentsNum = "0 Comments";
+		} else if (commentsCount == 1) {
+			commentsNum = "1 Comment";
+		} else {
+			commentsNum = commentsCount + " Comments";
+		}
+		$("commentsNum").innerHTML = commentsNum;
 	}
 };
 

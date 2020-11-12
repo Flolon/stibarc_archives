@@ -8,7 +8,7 @@ req.onreadystatechange = function () {
 		var commentsCount = Object.keys(tmp).length;
 		var commentsHTML = "";
 		for (var i = commentsCount - 1; i > -1; i--) {
-			commentsHTML += buildComment(tmp[i]);
+			commentsHTML += buildComment(tmp[i], true);
 		}
 		$("comments").innerHTML = commentsHTML;
 		// post count //

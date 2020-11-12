@@ -34,12 +34,16 @@
                 <h2 id="postsLink" class="tab disable-select active" onclick="tab('posts', true)">Posts</h2>
                 <h2 id="commentsLink" class="tab disable-select" onclick="tab('comments', true)">Comments</h2>
         
-                <div class="posts tab-content" id="posts">
-                    Loading...
+                <div class="posts tab-content" id="postsTab" style="display: none;">
+                    <div id="posts">Loading...</div>
+                    <br>
+                    <div id="postsNum"></div>
                 </div>
         
-                <div class="comments tab-content" id="comments" style="display: none;">
-                    Loading...
+                <div class="comments tab-content" id="commentsTab" style="display: none;">
+                    <div id="comments">Loading...</div>
+                    <br>
+                    <div id="commentsNum"></div>
                 </div>
         
             </div>
