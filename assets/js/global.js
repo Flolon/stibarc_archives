@@ -1,4 +1,4 @@
-function $(id) {  //less typing
+function $(id) {
     if(id.startsWith(".")){
         return document.getElementsByClassName(id.substring(1));
     }else{
@@ -8,9 +8,7 @@ function $(id) {  //less typing
 
 function toDate(input) {
     var t = input.split(/[- :]/);
-    // Apply each element to the Date function
     var d = new Date(Date.UTC(t[0], t[1]-1, t[2], t[3], t[4], t[5]));
-    //console.log(d);
     return(d);
 }
 
@@ -51,4 +49,54 @@ function getAllUrlParams(url) {
 		}
 	}
 	return obj;
+}
+
+function buildComment(data, type = false) {
+	var poster = data.poster;
+	var postId = data.postid;
+	var content = data.content
+		.replace(/&/g, "&amp;")
+		.replace(/</g, "&lt;")
+		.replace(/>/g, "&gt;")
+		.replace(/\r\n/g, "<br>");
+	if(data.error == 'time') {
+		var timeMeta = 'class="date metaError" title="Time is not accurate"';
+	} else {
+		var timeMeta = 'class="date"';
+	}
+	var date = formatDate(toDate(data.date));
+
+	if(type) {
+		var commentItem =
+			'<div class="comment"> <div class="top"> <a href="./user.html?id=' +
+			poster +
+			'" class="username">' +
+			poster +
+			'</a><span>&nbsp;on post&nbsp;<a href="./post.html?id=' +
+			postId +
+			'" class="postId">' +
+			postId +
+			'</a></span>&nbsp;at&nbsp;<span ' +
+			timeMeta +
+			'>' +
+			date +
+			'</span> </div> <div class="content">' +
+			content +
+			"</div> </div>";
+	} else {
+		var commentItem =
+			'<div class="comment"> <div class="top"> <a href="./user.html?id=' +
+			poster +
+			'" class="username">' +
+			poster +
+			'</a>&nbsp;at&nbsp;<span ' +
+			timeMeta +
+			'>' +
+			date +
+			'</span> </div> <div class="content">' +
+			content +
+			"</div> </div>";
+	}
+
+	return commentItem;
 }

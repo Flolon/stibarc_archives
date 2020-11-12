@@ -20,16 +20,13 @@ function tabFromUrl(){
 	tab(currentTab, false);
 }
 
-function buildUser(data) {
+function buildUser() {
     $('username').innerHTML = username;
 }
-
-/* user posts */
 
 function buildPost(data) {
 	var postId = data.postid;
 	var title = data.title;
-	var poster = data.poster;
 	var date = formatDate(toDate(data.postdate));
 
 	var postItem =
@@ -50,7 +47,6 @@ req.onreadystatechange = function () {
 	if (this.readyState == 4 && this.status == 200) {
 		var tmp = null;
 		var tmp = JSON.parse(req.responseText);
-		//console.log(tmp);
 		var postsCount = Object.keys(tmp).length;
         var postsHTML = "";
         if(postsCount > 0) {
@@ -76,32 +72,6 @@ function loadUserPosts() {
 	req.send();
 }
 
-/* user comments */
-
-function buildComment(data) {
-	var poster = data.poster;
-	var postId = data.postid;
-	var content = data.content
-		.replace(/&/g, "&amp;")
-		.replace(/</g, "&lt;")
-		.replace(/>/g, "&gt;")
-		.replace(/\r\n/g, "<br>");
-	var date = formatDate(toDate(data.date));
-
-	var commentItem =
-		'<div class="comment"> <span>On post&nbsp;<a href="./post.html?id=' +
-		postId +
-		'" class="postId">' +
-		postId +
-		'</a></span>&nbsp;at&nbsp;<span class="date">' +
-		date +
-		'</span> <div class="content">' +
-		content +
-		"</div> </div>";
-
-	return commentItem;
-}
-
 var req2 = new XMLHttpRequest();
 req2.onreadystatechange = function () {
 	request = null;
@@ -113,7 +83,7 @@ req2.onreadystatechange = function () {
 		var commentsHTML = "";
         if(commentsCount > 0) {
             for (var i = commentsCount - 1; i > -1; i--) {
-                commentsHTML += buildComment(tmp[i]);
+                commentsHTML += buildComment(tmp[i], true);
             }
         }else {
             commentsHTML = "<span>No comments</span>";
@@ -128,13 +98,11 @@ function loadUserComments() {
 	req2.send();
 }
 
-// Window load //
-window.onload = function () {
-    buildUser();
-	loadUserPosts();
-	loadUserComments();
-	tabFromUrl();
-};
+buildUser();
+loadUserPosts();
+loadUserComments();
+tabFromUrl();
+
 window.onpopstate = function(e) {
 	tabFromUrl();
 }

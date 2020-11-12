@@ -26,8 +26,6 @@ req.onreadystatechange = function () {
 	if (this.readyState == 4 && this.status == 200) {
 		var tmp = null;
 		var tmp = JSON.parse(req.responseText);
-		//console.log(tmp);
-		//$("posts").innerHTML = '<div class="post-row">E</div>';
 		var postsCount = Object.keys(tmp).length;
 		var postsHTML = "";
 		for (var i = postsCount - 1; i > -1; i--) {
@@ -54,7 +52,4 @@ function loadPosts() {
 	req.send();
 }
 
-// Window load //
-window.onload = function () {
-	loadPosts();
-};
+loadPosts();

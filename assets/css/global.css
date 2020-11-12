@@ -123,3 +123,9 @@ button.button {
 	text-decoration: none;
 	color: inherit;
 }
+
+/* - Errors - */
+
+.metaError {
+    color: rgba(248, 44, 44, 0.95)!important;
+}

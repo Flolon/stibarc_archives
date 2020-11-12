@@ -37,7 +37,6 @@ req.onreadystatechange = function () {
 	if (this.readyState == 4 && this.status == 200) {
 		var tmp = null;
 		var tmp = JSON.parse(req.responseText);
-		//console.log(tmp);
 		buildPost(tmp[0]);
 	}
 };
@@ -52,32 +51,6 @@ function loadPost() {
 		true
 	);
 	req.send();
-}
-
-/* post comments */
-
-function buildComment(data) {
-	var poster = data.poster;
-	var postId = data.postid;
-	var content = data.content
-		.replace(/&/g, "&amp;")
-		.replace(/</g, "&lt;")
-		.replace(/>/g, "&gt;")
-		.replace(/\r\n/g, "<br>");
-	var date = formatDate(toDate(data.date));
-
-	var commentItem =
-		'<div class="comment"> <div class="top"> <a href="./user.html?id=' +
-		poster +
-		'" class="username">' +
-		poster +
-		'</a>&nbsp;at&nbsp;<span class="date">' +
-		date +
-		'</span> </div> <div class="content">' +
-		content +
-		"</div> </div>";
-
-	return commentItem;
 }
 
 var req2 = new XMLHttpRequest();
@@ -113,8 +86,5 @@ function loadPostComments() {
 	req2.send();
 }
 
-// Window load //
-window.onload = function () {
-	loadPost();
-	loadPostComments();
-};
+loadPost();
+loadPostComments();

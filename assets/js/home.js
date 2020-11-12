@@ -23,6 +23,7 @@ function buildPost(data) {
 var req = new XMLHttpRequest();
 req.onreadystatechange = function () {
 	request = null;
+	$("postsNum").innerHTML = "";
 	if (this.readyState == 4 && this.status == 200) {
 		var tmp = null;
 		var tmp = JSON.parse(req.responseText);
@@ -43,49 +44,19 @@ req.onreadystatechange = function () {
 };
 
 function loadPosts() {
-	$("postsNum").innerHTML = "";
 	req.open("GET", "https://apis.buncode.com/sa/json/posts/", true);
 	req.send();
 }
-
-/* comments */
-function buildComment(data) {
-	var poster = data.poster;
-	var postId = data.postid;
-	var content = data.content
-		.replace(/&/g, "&amp;")
-		.replace(/</g, "&lt;")
-		.replace(/>/g, "&gt;")
-		.replace(/\r\n/g, "<br>");
-	var date = formatDate(toDate(data.date));
-
-	var commentItem =
-		'<div class="comment"> <div class="top"> <a href="./user.html?id=' +
-		poster +
-		'" class="username">' +
-		poster +
-		'</a><span>&nbsp;on post&nbsp;<a href="./post.html?id=' +
-		postId +
-		'" class="postId">' +
-		postId +
-		'</a></span>&nbsp;at&nbsp;<span class="date">' +
-		date +
-		'</span> </div> <div class="content">' +
-		content +
-		"</div> </div>";
-
-	return commentItem;
-}
-
 var req2 = new XMLHttpRequest();
 req2.onreadystatechange = function () {
 	request = null;
+	$("commentsNum").innerHTML = "";
 	if (this.readyState == 4 && this.status == 200) {
 		var tmp = null;
 		var tmp = JSON.parse(req2.responseText);
 		var commentsCount = Object.keys(tmp).length;
 		var latestCommentNum = commentsCount - 1;
-		$("latestComment").innerHTML = buildComment(tmp[latestCommentNum]);
+		$("latestComment").innerHTML = buildComment(tmp[latestCommentNum], false);
 		// post count //
 		var commentsNum;
 		if (commentsCount == 0) {
@@ -100,13 +71,9 @@ req2.onreadystatechange = function () {
 };
 
 function loadComments() {
-	$("commentsNum").innerHTML = "";
 	req2.open("GET", "https://apis.buncode.com/sa/json/comments/", true);
 	req2.send();
 }
 
-// Window load //
-window.onload = function () {
-	loadPosts();
-	loadComments();
-};
+loadPosts();
+loadComments();

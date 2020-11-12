@@ -1,31 +1,3 @@
-function buildComment(data) {
-	var poster = data.poster;
-	var postId = data.postid;
-	var content = data.content
-		.replace(/&/g, "&amp;")
-		.replace(/</g, "&lt;")
-		.replace(/>/g, "&gt;")
-		.replace(/\r\n/g, "<br>");
-	var date = formatDate(toDate(data.date));
-
-	var commentItem =
-		'<div class="comment"> <div class="top"> <a href="./user.html?id=' +
-		poster +
-		'" class="username">' +
-		poster +
-		'</a><span>&nbsp;on post&nbsp;<a href="./post.html?id=' +
-		postId +
-		'" class="postId">' +
-		postId +
-		'</a></span>&nbsp;at&nbsp;<span class="date">' +
-		date +
-		'</span> </div> <div class="content">' +
-		content +
-		"</div> </div>";
-
-	return commentItem;
-}
-
 var req = new XMLHttpRequest();
 req.onreadystatechange = function () {
 	request = null;
@@ -59,7 +31,4 @@ function loadComments() {
 	req.send();
 }
 
-// Window load //
-window.onload = function () {
-	loadComments();
-};
+loadComments();
