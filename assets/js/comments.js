@@ -11,7 +11,7 @@ req.onreadystatechange = function () {
 			commentsHTML += buildComment(tmp[i], true);
 		}
 		$("comments").innerHTML = commentsHTML;
-		// post count //
+		// comments count //
 		var commentsNum;
 		if (commentsCount == 0) {
 			commentsNum = "0 Comments";
