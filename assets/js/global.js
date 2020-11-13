@@ -64,11 +64,13 @@ function buildComment(data, type = false) {
 	} else {
 		var timeMeta = 'class="date"';
 	}
-	if(data.error !== 'old') {
-		var date = formatDate(toDate(data.date));
+	if(data.date == null || data.date == '') {
+		var date = 'Unknown date';
 	} else {
-		var timeMeta = 'class="date metaError" title="Time is not accurate"';
-		var date = 'No date</span><span class="badge yellow" style="float: right;" title="This post is from an older archive">OLD ARCHIVE';
+		var date = formatDate(toDate(data.date));
+	}
+	if(data.error == 'old') {
+		date += '</span><span class="badge yellow" style="float: right;" title="This post is from an older archive">OLD ARCHIVE';	
 	}
 
 	if(type) {
