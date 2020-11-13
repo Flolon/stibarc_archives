@@ -3,7 +3,6 @@
 include('../../common.inc.php');
 include('../../db.inc.php');
 
-//read from db table //
 try {
     $connection = new PDO($sql_dsn, $sql_username, $sql_password, $sql_options);
     $sql = "SELECT * 
@@ -18,9 +17,9 @@ try {
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 } catch(PDOException $error) {
-    echo $sql . "<br />" . $error->getMessage();
+    $result = array("error" => $error->getMessage());
 }
-// page //
+
 header('Content-Type: application/json');
 
 if ($_GET['pp']) {
