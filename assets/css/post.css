@@ -10,11 +10,6 @@
 	margin-bottom: .88rem;
 }
 
-.post .top {
-	display: flex;
-	align-items: center;
-}
-
 .post .pfp {
 	padding: 6px;
 	font-size: 110%;
@@ -56,4 +51,8 @@
 .post #content {
 	margin: 1rem 0 2rem 0;
 	word-wrap: break-word;
+}
+
+.post .badge {
+	margin-bottom: .75rem;
 }

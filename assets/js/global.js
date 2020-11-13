@@ -65,9 +65,10 @@ function buildComment(data, type = false) {
 		var timeMeta = 'class="date"';
 	}
 	if(data.error !== 'old') {
-	    var date = formatDate(toDate(data.date));		
+		var date = formatDate(toDate(data.date));
 	} else {
-		var date = 'No date';
+		var timeMeta = 'class="date metaError" title="Time is not accurate"';
+		var date = 'No date</span><span class="badge yellow" style="float: right;" title="This post is from an older archive">OLD ARCHIVE';
 	}
 
 	if(type) {

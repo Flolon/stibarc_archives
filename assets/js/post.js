@@ -29,6 +29,9 @@ function buildPost(data) {
 	$("username").href = `./user.html?id=${poster}`;
 	$("date").innerHTML = date;
 	$("content").innerHTML = content;
+	if(data.error == 'old') {
+		$('.badges')[0].innerHTML = '<div class="badge yellow" title="This post is from an older archive">OLD ARCHIVE</div>';
+	}
 }
 
 var req = new XMLHttpRequest();

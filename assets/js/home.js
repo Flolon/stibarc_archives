@@ -56,7 +56,7 @@ req2.onreadystatechange = function () {
 		var tmp = JSON.parse(req2.responseText);
 		var commentsCount = Object.keys(tmp).length;
 		var latestCommentNum = commentsCount - 1;
-		$("latestComment").innerHTML = buildComment(tmp[latestCommentNum], false);
+		$("latestComment").innerHTML = buildComment(tmp[latestCommentNum], true);
 		// post count //
 		var commentsNum;
 		if (commentsCount == 0) {

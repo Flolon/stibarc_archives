@@ -1,3 +1,8 @@
+.flex {
+    display: flex;
+    align-items: center;
+}
+
 .flex-grow {
     display: flex;
     flex-grow: 1;
@@ -122,6 +127,25 @@ button.button {
 .comment a {
 	text-decoration: none;
 	color: inherit;
+}
+
+/* - Badges - */
+
+.badge {
+    display: inline-block;
+    padding: 2px 7px;
+    font-size: 85%;
+    border-radius: 3px;
+    cursor: default;
+}
+
+.badge.help {
+    cursor: help;
+}
+
+.badge.yellow {
+    background-color: rgb(255, 236, 126);
+    color: #555544;
 }
 
 /* - Errors - */
