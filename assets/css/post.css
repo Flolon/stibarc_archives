@@ -55,5 +55,8 @@
 
 .post .badge {
 	margin-right: 4px;
+}
+
+.post .badge:last-child {
 	margin-bottom: .75rem;
 }
