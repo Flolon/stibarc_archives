@@ -148,6 +148,11 @@ button.button {
     color: #555544;
 }
 
+.badge.red {
+    background-color: rgb(255 135 135 / 95%);
+    color: #141414;
+}
+
 /* - Errors - */
 
 .metaError {
