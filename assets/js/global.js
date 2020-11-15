@@ -77,10 +77,10 @@ function buildComment(data, type = false) {
 		.replace(/</g, "&lt;")
 		.replace(/>/g, "&gt;")
 		.replace(/\r\n/g, "<br>");
-	if(data.error == 'time' || data.error == 'old') {
-		var timeMeta = 'class="date metaError" title="Time is not accurate"';
+	if(data.error == 'time' || data.error == 'old' || data.date == null || data.date == '') {
+		var dateMeta = 'class="date metaError" title="Time is not accurate"';
 	} else {
-		var timeMeta = 'class="date"';
+		var dateMeta = 'class="date"';
 	}
 	if(data.date == null || data.date == '') {
 		var date = 'Unknown date';
@@ -102,7 +102,7 @@ function buildComment(data, type = false) {
 			'" class="postId">' +
 			postId +
 			'</a></span>&nbsp;at&nbsp;<span ' +
-			timeMeta +
+			dateMeta +
 			'>' +
 			date +
 			'</span> </div> <div class="content">' +
@@ -115,7 +115,7 @@ function buildComment(data, type = false) {
 			'" class="username">' +
 			poster +
 			'</a>&nbsp;at&nbsp;<span ' +
-			timeMeta +
+			dateMeta +
 			'>' +
 			date +
 			'</span> </div> <div class="content">' +
@@ -134,7 +134,22 @@ function buildPostBlock(data, type = false) {
 	var postId = data.postid;
 	var title = data.title;
 	var poster = data.poster;
-	var date = formatDate(toDate(data.postdate));
+	if(data.error == 'time' || data.postdate == null || data.postdate == '') {
+		var dateMeta = 'class="date metaError" title="Time is not accurate"';
+	} else {
+		var dateMeta = 'class="date"';
+	}
+	if(data.postdate == null || data.postdate == '') {
+		var date = 'Unknown date';
+	} else {
+		var date = formatDate(toDate(data.postdate));
+	}
+	if(data.deleted == 1) {
+		title += '</span><span class="badge red"style="float: right; margin-left: 4px;"  title="Removed from the original site">DELETED';
+	}
+	if(data.error == 'old') {
+		title += '</span><span class="badge yellow" style="float: right;" title="This post is from an older archive">OLD ARCHIVE';	
+	}
 
 	if(type) {
 		var postItem =
@@ -142,26 +157,30 @@ function buildPostBlock(data, type = false) {
 			postId +
 			')"> <a href="post.html?id=' +
 			postId +
-			'"> <div class="title">' +
+			'"> <div class="title"><span>' +
 			title +
-			'</div> </a> <div class="meta"> <span class="date">' +
+			'</span></div> </a> <div class="meta"> <span ' +
+			dateMeta +
+			'>' +
 			date +
-			"</span> </div> </div>";
+			'</span> </div> </div>';
 	} else {
 		var postItem =
 			'<div class="post" tabindex="-1" onclick="goToPost(' +
 			postId +
 			')"> <a href="post.html?id=' +
 			postId +
-			'"> <div class="title">' +
+			'"> <div class="title"><span>' +
 			title +
-			'</div> </a> <div class="meta"> <span>By:&nbsp;<a class="username" href="user.html?id=' +
+			'</span></div> </a> <div class="meta"> <span>By:&nbsp;<a class="username" href="user.html?id=' +
 			poster +
 			'">' +
 			poster +
-			'</a></span> at <span class="date">' +
+			'</a></span> at <span ' +
+			dateMeta +
+			'>' +
 			date +
-			"</span> </div> </div>";
+			'</span></div> </div>';
 	}
 
 	return postItem;

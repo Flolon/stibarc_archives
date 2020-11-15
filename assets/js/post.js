@@ -1,40 +1,47 @@
 var postId = getAllUrlParams().id;
 
 function buildPost(data) {
-	var title = data.title
+	$("title").innerHTML = data.title
 		.replace(/&/g, "&amp;")
 		.replace(/</g, "&lt;")
 		.replace(/>/g, "&gt;");
-	var poster = data.poster;
-	var date = formatDate(toDate(data.postdate));
+	$("username").innerHTML = data.poster;
+	$("username").href = `./user.html?id=${data.poster}`;
+
 	if (
-		poster == "herronjo" ||
-		poster == "DomHupp" ||
-		poster == "Aldeenyo" ||
-		poster == "savaka" ||
-		poster == "alluthus" ||
-		poster == "Bunnbuns"
+		data.poster == "herronjo" ||
+		date.poster == "DomHupp" ||
+		data.poster == "Aldeenyo" ||
+		data.poster == "savaka" ||
+		data.poster == "alluthus" ||
+		data.poster == "Bunnbuns"
 	) {
-		var content = data.content.replace(/\r\n/g, "<br>");
+		$("content").innerHTML = data.content.replace(/\r\n/g, "<br>");
 	} else {
-		var content = data.content
+		$("content").innerHTML = data.content
 			.replace(/&/g, "&amp;")
 			.replace(/</g, "&lt;")
 			.replace(/>/g, "&gt;")
 			.replace(/\r\n/g, "<br>");
 	}
 
-	$("title").innerHTML = title;
+	if(data.error == 'time' || data.postdate == null || data.postdate == '') {
+		$("date").classList.add("metaError");
+		$("date").title = "Time is not accurate";
+	}
+	if(data.postdate == null || data.postdate == '') {
+		$("date").innerHTML = 'Unknown date';
+	} else {
+		$("date").innerHTML = formatDate(toDate(data.postdate));
+	}
+
 	if(data.error == 'old') {
 		$("badges").innerHTML += '<div class="badge yellow" title="This post is from an older archive">OLD ARCHIVE</div>';
 	}
 	if(data.deleted == 1) {
 		$("badges").innerHTML += '<div class="badge red" title="Removed from the original site">DELETED</div>';
 	}
-	$("username").innerHTML = poster;
-	$("username").href = `./user.html?id=${poster}`;
-	$("date").innerHTML = date;
-	$("content").innerHTML = content;
+
 }
 
 var req = new XMLHttpRequest();
