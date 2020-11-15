@@ -1,25 +1,3 @@
-function buildPost(data) {
-	var postId = data.postid;
-	var title = data.title;
-	var poster = data.poster;
-	var date = formatDate(toDate(data.postdate));
-
-	var postItem =
-		'<div class="post"> <a href="post.html?id=' +
-		postId +
-		'" class="overlay" tabindex="1"> <div class="title">' +
-		title +
-		'</div> </a> <div class="inner"> <br> <span>By:&nbsp;<a class="username" href="user.html?id=' +
-		poster +
-		'">' +
-		poster +
-		'</a></span> at <span class="date">' +
-		date +
-		"</span> </div> </div>";
-
-	return postItem;
-}
-
 var req = new XMLHttpRequest();
 req.onreadystatechange = function () {
 	request = null;
@@ -29,7 +7,7 @@ req.onreadystatechange = function () {
 		var tmp = JSON.parse(req.responseText);
 		var postsCount = Object.keys(tmp).length;
 		var latestPostNum = postsCount - 1;
-		$("latestPost").innerHTML = buildPost(tmp[latestPostNum]);
+		$("latestPost").innerHTML = buildPostBlock(tmp[latestPostNum]);
 		// post count //
 		var postsNum;
 		if (postsCount == 0) {

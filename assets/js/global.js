@@ -1,3 +1,21 @@
+
+if (typeof(Storage) !== "undefined") {
+    if(localStorage.getItem("archiveType") === null) {
+		console.log("Setting archiveType to new");
+        localStorage.setItem("archiveType", "new");
+    }
+} else {
+    console.log("Sorry, your browser does not support Web Storage...");
+}
+
+if(localStorage.getItem("archiveType") == "all") {
+	archiveTypeP = '&type=' + localStorage.getItem("archiveType");
+} else if(getAllUrlParams().type == "all") {
+	archiveTypeP = '&type=all';
+} else {
+	archiveTypeP = '';
+}
+
 function $(id) {
     if(id.startsWith(".")){
         return document.getElementsByClassName(id.substring(1));
@@ -106,4 +124,37 @@ function buildComment(data, type = false) {
 	}
 
 	return commentItem;
+}
+
+function buildPostBlock(data, type = false) {
+	var postId = data.postid;
+	var title = data.title;
+	var poster = data.poster;
+	var date = formatDate(toDate(data.postdate));
+
+	if(type) {
+		var postItem =
+		'<div class="post" tabindex="1"> <a href="post.html?id=' +
+		postId +
+		'"> <div class="title">' +
+		title +
+		'</div> </a> <div class="meta"> <span class="date">' +
+		date +
+		"</span> </div> </div>";
+	} else {
+		var postItem =
+			'<div class="post" tabindex="1"> <a href="post.html?id=' +
+			postId +
+			'"> <div class="title">' +
+			title +
+			'</div> </a> <div class="meta"> <span>By:&nbsp;<a class="username" href="user.html?id=' +
+			poster +
+			'">' +
+			poster +
+			'</a></span> at <span class="date">' +
+			date +
+			"</span> </div> </div>";
+	}
+
+	return postItem;
 }

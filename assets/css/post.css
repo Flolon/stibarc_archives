@@ -28,7 +28,7 @@
 }
 
 .post .date {
-	margin-top: 0.55rem;
+	margin-top: 0.75rem;
 	color: rgba(0, 0, 0, 0.85);
 }
 
@@ -37,12 +37,10 @@
 	vertical-align: middle;
 	margin-right: 4px;
 	font-size: 130%;
-	padding: 4px;
 	color: rgba(0, 0, 0, 0.75);
 }
 
 .post #date {
-	font-size: 1.03rem;
 	display: inline-block;
 	vertical-align: middle;
 	color: rgba(0, 0, 0, 0.75);

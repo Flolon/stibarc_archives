@@ -49,11 +49,11 @@ req.onreadystatechange = function () {
 
 function loadPost() {
 	$("ogLink").href = "https://stibarc.com/post.html?id=" + postId;
-	$("jsonLink").href = "./json/post/?id=" + postId;
-	$("jsonLink2").href = "./json/post/comments/?id=" + postId;
+	$("jsonLink").href = "./json/post/?id=" + postId + archiveTypeP;
+	$("jsonLink2").href = "./json/post/comments/?id=" + postId + archiveTypeP;
 	req.open(
 		"GET",
-		"https://apis.buncode.com/sa/json/post/?id=" + postId,
+		"https://apis.buncode.com/sa/json/post/?id=" + postId + archiveTypeP,
 		true
 	);
 	req.send();
@@ -87,7 +87,7 @@ req2.onreadystatechange = function () {
 function loadPostComments() {
 	$("comments").innerHTML = "Loading...";
 	$("commentsNum").innerHTML = "";
-	req2.open("GET", "https://apis.buncode.com/sa/json/post/comments/?id="+postId, true);
+	req2.open("GET", "https://apis.buncode.com/sa/json/post/comments/?id=" + postId + archiveTypeP, true);
 	req2.send();
 }
 

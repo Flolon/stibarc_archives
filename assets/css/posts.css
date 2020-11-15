@@ -44,11 +44,8 @@
 	right: 0;
 }
 
-.post .inner {
-    position: relative;
-	pointer-events: none;
-	z-index: 1;
-	margin-top: 0.4rem;
+.post .meta {
+	margin-top: 0.15rem;
 	margin-bottom: 0.25rem;
 }
 

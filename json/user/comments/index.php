@@ -5,10 +5,17 @@ include('../../../db.inc.php');
 
 try {
     $connection = new PDO($sql_dsn, $sql_username, $sql_password, $sql_options);
-    $sql = "SELECT * 
-                    FROM comments 
-                    WHERE poster = :poster
-                    ";
+    if($_GET['type'] == "all") {
+        $sql = "SELECT * 
+                FROM all_comments 
+                WHERE poster = :poster
+                ";
+    } else {
+        $sql = "SELECT * 
+                FROM comments 
+                WHERE poster = :poster
+                ";
+    }
     
     if(isset($_GET['id'])) { $postId = $_GET['id']; }
     $statement = $connection->prepare($sql);

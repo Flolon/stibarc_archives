@@ -24,23 +24,6 @@ function buildUser() {
     $('username').innerHTML = username;
 }
 
-function buildPost(data) {
-	var postId = data.postid;
-	var title = data.title;
-	var date = formatDate(toDate(data.postdate));
-
-	var postItem =
-		'<div class="post"> <a href="post.html?id=' +
-		postId +
-		'" class="overlay" tabindex="1"> <div class="title">' +
-		title +
-		'</div> </a> <div class="inner"> <br> <span class="date">' +
-		date +
-		"</span> </div> </div>";
-
-	return postItem;
-}
-
 var req = new XMLHttpRequest();
 req.onreadystatechange = function () {
 	request = null;
@@ -51,7 +34,7 @@ req.onreadystatechange = function () {
         var postsHTML = "";
         if(postsCount > 0) {
             for (var i = postsCount - 1; i > -1; i--) {
-                postsHTML += buildPost(tmp[i]);
+                postsHTML += buildPostBlock(tmp[i], true);
             }
         }else {
             postsHTML = '<b style="color: #2b2b2b;">No posts</b>';
@@ -76,7 +59,7 @@ function loadUserPosts() {
 	$("jsonLink").href = "./json/user/";
 	req.open(
 		"GET",
-		"https://apis.buncode.com/sa/json/user/posts/?id=" + username,
+		"https://apis.buncode.com/sa/json/user/posts/?id=" + username + archiveTypeP,
 		true
 	);
 	req.send();
@@ -113,7 +96,7 @@ req2.onreadystatechange = function () {
 
 function loadUserComments() {
 	$("comments").innerHTML = "Loading...";
-	req2.open("GET", "https://apis.buncode.com/sa/json/user/comments/?id="+username, true);
+	req2.open("GET", "https://apis.buncode.com/sa/json/user/comments/?id=" + username + archiveTypeP, true);
 	req2.send();
 }
 
