@@ -144,7 +144,8 @@ button.button {
 .badge {
     display: inline-block;
     padding: 2px 7px;
-    font-size: 85%;
+    font-size: 14px;
+    font-weight: 400;
     border-radius: 3px;
     cursor: default;
 }
