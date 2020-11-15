@@ -11,12 +11,17 @@
         
         <!-- CSS -->
         <link rel="stylesheet" href="https://apis.buncode.com/css/default.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="./assets/css/global.css">
 
     </head>
     <body class="container">
         <br>
-        <a href="./"><img class="top-logo sm" src="./assets/images/logo.png"><span class="logo-title">STiBaRC Archives</span></a>
+        <div class="flex">
+            <a href="./"><img class="top-logo sm" src="./assets/images/logo.png"><span class="logo-title">STiBaRC Archives</span></a>
+            <span class="flex-grow"></span>
+            <a href="./settings.html"><span class="material-icons icon-btn"> settings </span></a>
+        </div>
         
         <div style="display: flex; align-items: center;">
             <h1>All Comments</h1><span class="flex-grow"></span><a class="button" href="./json/comments/">JSON</a>&nbsp;<button class="button" onclick="loadComments()">Refresh</button>

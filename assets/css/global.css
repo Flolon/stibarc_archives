@@ -71,6 +71,16 @@ button.button {
     border-color: rgba(0, 0, 0, 0.5);
 }
 
+.icon-btn {
+    color: rgba(82, 84, 86, 1);
+    cursor: pointer;
+    transition: .1s ease-in-out;
+}
+
+.icon-btn:hover {
+    color: rgba(82, 84, 86, .88);
+}
+
 #ogLink {
 	border-color: rgba(28, 74, 128, 0.8);
 	color: rgba(28, 74, 128, 1);
