@@ -126,6 +126,10 @@ function buildComment(data, type = false) {
 	return commentItem;
 }
 
+function goToPost(id) {
+	window.location.href = './post.html?id=' + id;
+}
+
 function buildPostBlock(data, type = false) {
 	var postId = data.postid;
 	var title = data.title;
@@ -134,16 +138,20 @@ function buildPostBlock(data, type = false) {
 
 	if(type) {
 		var postItem =
-		'<div class="post" tabindex="1"> <a href="post.html?id=' +
-		postId +
-		'"> <div class="title">' +
-		title +
-		'</div> </a> <div class="meta"> <span class="date">' +
-		date +
-		"</span> </div> </div>";
+			'<div class="post" tabindex="-1" onclick="goToPost(' +
+			postId +
+			')"> <a href="post.html?id=' +
+			postId +
+			'"> <div class="title">' +
+			title +
+			'</div> </a> <div class="meta"> <span class="date">' +
+			date +
+			"</span> </div> </div>";
 	} else {
 		var postItem =
-			'<div class="post" tabindex="1"> <a href="post.html?id=' +
+			'<div class="post" tabindex="-1" onclick="goToPost(' +
+			postId +
+			')"> <a href="post.html?id=' +
 			postId +
 			'"> <div class="title">' +
 			title +
