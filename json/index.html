@@ -11,6 +11,7 @@
         
         <!-- CSS -->
         <link rel="stylesheet" href="https://apis.buncode.com/css/default.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="../assets/css/global.css">
         <!-- custom -->
         <link rel="stylesheet" href="../assets/css/posts.css">
@@ -24,25 +25,33 @@
 
         <div class="container" style="min-height: 80vh;">
             <br>
-            <a href="../"><img class="top-logo sm" src="../assets/images/logo.png"><span class="logo-title">STiBaRC Archives</span></a>
+            <div class="flex">
+                <a href="../"><img class="top-logo sm" src="../assets/images/logo.png"><span class="logo-title">STiBaRC Archives</span></a>
+                <span class="flex-grow"></span>
+                <a href="../settings.html"><span class="material-icons icon-btn"> settings </span></a>
+            </div>
             
-            <div style="display: flex; align-items: center;">
+            <div class="flex">
                 <h1>JSON API</h1><span class="flex-grow"></span>
             </div>
 
-            <span><a class="button" href="./posts/">All Posts</a></span>
-            <span><a class="button" href="./comments/">All Comments</a></span>
-            <div style="margin-top: 6px;">
-                <span><a class="button" href="./posts/latest/">Latest Post</a></span>
-                <span><a class="button" href="./comments/latest/">Latest Comment</a></span>
-            </div>
-            <div style="margin-top: 6px;">
-                <span><a class="button" href="./post/?id=">Single Post</a></span>
-                <span><a class="button" href="./post/comments/?id=">Single Post Comments</a></span>
-            </div>
-            <div style="margin-top: 6px;">
-                <span><a class="button" href="./user/posts/?id=">Posts by User</a></span>
-                <span><a class="button" href="./user/comments/?id=">Comments by User</a></span>
+            <div class="main">
+
+                <span><a class="button" href="./posts/">All Posts</a></span>
+                <span><a class="button" href="./comments/">All Comments</a></span>
+                <div style="margin-top: 6px;">
+                    <span><a class="button" href="./posts/latest/">Latest Post</a></span>
+                    <span><a class="button" href="./comments/latest/">Latest Comment</a></span>
+                </div>
+                <div style="margin-top: 6px;">
+                    <span><a class="button" href="./post/?id=">Single Post</a></span>
+                    <span><a class="button" href="./post/comments/?id=">Single Post Comments</a></span>
+                </div>
+                <div style="margin-top: 6px;">
+                    <span><a class="button" href="./user/posts/?id=">Posts by User</a></span>
+                    <span><a class="button" href="./user/comments/?id=">Comments by User</a></span>
+                </div>
+
             </div>
         
         </div>
