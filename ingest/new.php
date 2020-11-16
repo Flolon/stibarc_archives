@@ -19,7 +19,7 @@ $type = $_GET['type'];
                 );
                 $sql = sprintf(
                         "INSERT INTO %s (%s) values (%s)",
-                        "all_posts",
+                        "posts",
                         implode(", ", array_keys($new)),
                         ":" . implode(", :", array_keys($new))
                 );
@@ -31,7 +31,7 @@ $type = $_GET['type'];
                 );
                 $sql = sprintf(
                         "INSERT INTO %s (%s) values (%s)",
-                        "all_comments",
+                        "comments",
                         implode(", ", array_keys($new)),
                         ":" . implode(", :", array_keys($new))
                 );

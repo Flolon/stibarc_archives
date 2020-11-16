@@ -2,8 +2,8 @@
 if (typeof(Storage) !== "undefined") {
     if(localStorage.getItem("archiveType") === null) {
 		console.log("Setting archiveType to new");
-        localStorage.setItem("archiveType", "new");
-    }
+		localStorage.setItem("archiveType", "new");
+	}
 } else {
     console.log("Sorry, your browser does not support Web Storage...");
 }
@@ -87,7 +87,7 @@ function buildComment(data, type = false) {
 	} else {
 		var date = formatDate(toDate(data.date));
 	}
-	if(data.error == 'old') {
+	if(data.archive == 'old') {
 		date += '</span><span class="badge yellow" style="float: right;" title="This post is from an older archive">OLD ARCHIVE';	
 	}
 
@@ -147,7 +147,7 @@ function buildPostBlock(data, type = false) {
 	if(data.deleted == 1) {
 		title += '</span><span class="badge red"style="float: right; margin-left: 4px;"  title="Removed from the original site">DELETED';
 	}
-	if(data.error == 'old') {
+	if(data.archive == 'old') {
 		title += '</span><span class="badge yellow" style="float: right;" title="This post is from an older archive">OLD ARCHIVE';	
 	}
 

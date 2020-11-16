@@ -6,8 +6,8 @@ include('../../../db.inc.php');
 try {
     $connection = new PDO($sql_dsn, $sql_username, $sql_password, $sql_options);
     $sql = "SELECT * 
-                    FROM posts 
-                    ORDER BY id DESC 
+                    FROM all_posts 
+                    ORDER BY postid DESC 
                     LIMIT 1
                     ";
     

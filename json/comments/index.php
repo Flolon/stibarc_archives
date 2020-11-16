@@ -11,7 +11,8 @@ try {
                 ";
     } else {
         $sql = "SELECT * 
-                FROM comments 
+                FROM all_comments
+                WHERE NOT archive='old'
                 ";
     }
     

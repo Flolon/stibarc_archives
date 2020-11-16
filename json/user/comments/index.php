@@ -12,8 +12,9 @@ try {
                 ";
     } else {
         $sql = "SELECT * 
-                FROM comments 
-                WHERE poster = :poster
+                FROM all_comments 
+                WHERE poster = :poster 
+                AND NOT archive='old'
                 ";
     }
     

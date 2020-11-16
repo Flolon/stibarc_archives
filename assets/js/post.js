@@ -35,7 +35,7 @@ function buildPost(data) {
 		$("date").innerHTML = formatDate(toDate(data.postdate));
 	}
 
-	if(data.error == 'old') {
+	if(data.archive == 'old') {
 		$("badges").innerHTML += '<div class="badge yellow" title="This post is from an older archive">OLD ARCHIVE</div>';
 	}
 	if(data.deleted == 1) {

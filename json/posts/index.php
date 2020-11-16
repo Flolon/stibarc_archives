@@ -11,7 +11,8 @@ try {
                 ";
     } else {
         $sql = "SELECT * 
-                FROM posts 
+                FROM all_posts 
+                WHERE NOT archive='old'
                 ";
     }
     
