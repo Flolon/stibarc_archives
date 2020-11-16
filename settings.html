@@ -26,20 +26,28 @@
                 <a href="./settings.html"><span class="material-icons icon-btn"> settings </span></a>
             </div>
             
-            <div class="flex">
-                <h1>Settings</h1><span class="flex-grow"></span>
-            </div>
+            <h1>Settings</h1>
+            
+            <p>Change client and API settings</p>
 
             <div class="main">
 
-                <input type="checkbox" id="useAll" name="useAll" onclick="toggleArchiveType()">
-                <label for="useAll">&nbsp;Include older archives</label><br>
+                <h2>Content</h2>
+                <div>
+                    <input type="checkbox" id="useAll" name="useAll" onclick="toggleArchiveType()">
+                    <label for="useAll">&nbsp;Include older archives (before May 15, 2020)*</label>
+                </div>
 
             </div>
         
         </div>
 
-	    <br><br><br>
+        <footer class="container center" style="margin-top: 5rem;">
+            <div><a href="https://stibarc.com" style="color: inherit; font-weight: 500;">STiBaRC</a></div>
+            <div style="margin-top: .75rem; font-size: 90%; color: rgba(0, 0, 0, 0.4);"><a href="https://stibarc.com/privacy.html" style="color: rgba(0, 0, 0, 0.65);">Privacy</a>&nbsp;|&nbsp;<a href="https://stibarc.com/tos.html" style="color: rgba(0, 0, 0, 0.65);">ToS</a></div>
+        </footer>
+        
+        <br><br>
 
 	    <script src="./assets/js/global.js"></script>
         <script src="./assets/js/settings.js"></script>
