@@ -154,6 +154,10 @@ button.button {
     cursor: help;
 }
 
+.post .badge {
+    margin: 2px 0;
+}
+
 .badge.yellow {
     background-color: rgb(255, 236, 126);
     color: #555544;
