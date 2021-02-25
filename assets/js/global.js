@@ -132,7 +132,11 @@ function goToPost(id) {
 
 function buildPostBlock(data, type = false) {
 	var postId = data.postid;
-	var title = data.title;
+	var title = data.title
+	var title = data.title
+		.replace(/&/g, "&amp;")
+		.replace(/</g, "&lt;")
+		.replace(/>/g, "&gt;");
 	var poster = data.poster;
 	if(data.error == 'time' || data.postdate == null || data.postdate == '') {
 		var dateMeta = 'class="date metaError" title="Time is not accurate"';
