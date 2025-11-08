@@ -26,7 +26,7 @@ req.onreadystatechange = function () {
 function loadPosts() {
 	$("posts").innerHTML = "Loading...";
 	$("postsNum").innerHTML = "";
-	req.open("GET", "https://apis.buncode.com/sa/json/posts/?type=" + getAllUrlParams().type, true);
+	req.open("GET", "https://apis.bunnbuns.net/sa/json/posts/?type=" + getAllUrlParams().type, true);
 	req.send();
 }
 

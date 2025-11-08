@@ -59,7 +59,7 @@ function loadUserPosts() {
 	$("jsonLink").href = "./json/user/";
 	req.open(
 		"GET",
-		"https://apis.buncode.com/sa/json/user/posts/?id=" + username + archiveTypeP,
+		"https://apis.bunnbuns.net/sa/json/user/posts/?id=" + username + archiveTypeP,
 		true
 	);
 	req.send();
@@ -96,7 +96,7 @@ req2.onreadystatechange = function () {
 
 function loadUserComments() {
 	$("comments").innerHTML = "Loading...";
-	req2.open("GET", "https://apis.buncode.com/sa/json/user/comments/?id=" + username + archiveTypeP, true);
+	req2.open("GET", "https://apis.bunnbuns.net/sa/json/user/comments/?id=" + username + archiveTypeP, true);
 	req2.send();
 }
 
