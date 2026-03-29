@@ -6,9 +6,9 @@
  ```
  <?php
 $sql_host       = "localhost";
-$sql_username   = "u611188077_stibarc";
-$sql_password   = "BruhMoment";
-$sql_dbname     = "u611188077_stibarc";
+$sql_username   = "username";
+$sql_password   = "password";
+$sql_dbname     = "database";
 $sql_dsn        = "mysql:host=$sql_host;dbname=$sql_dbname";
 $sql_options    = array(
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
