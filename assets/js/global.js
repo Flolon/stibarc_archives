@@ -1,3 +1,4 @@
+apiHost = "https://apis.bunnbuns.net/sa";
 
 if (typeof(Storage) !== "undefined") {
     if(localStorage.getItem("archiveType") === null) {

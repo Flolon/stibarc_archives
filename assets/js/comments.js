@@ -26,7 +26,7 @@ req.onreadystatechange = function () {
 function loadComments() {
 	$("comments").innerHTML = "Loading...";
 	$("commentsNum").innerHTML = "";
-	req.open("GET", "https://apis.bunnbuns.net/sa/json/comments/?type=" + getAllUrlParams().type, true);
+	req.open("GET", apiHost + "/json/comments/?type=" + getAllUrlParams().type, true);
 	req.send();
 }
 

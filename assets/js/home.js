@@ -22,7 +22,7 @@ req.onreadystatechange = function () {
 };
 
 function loadPosts() {
-	req.open("GET", "https://apis.bunnbuns.net/sa/json/posts/", true);
+	req.open("GET", apiHost + "/json/posts/", true);
 	req.send();
 }
 var req2 = new XMLHttpRequest();
@@ -49,7 +49,7 @@ req2.onreadystatechange = function () {
 };
 
 function loadComments() {
-	req2.open("GET", "https://apis.bunnbuns.net/sa/json/comments/", true);
+	req2.open("GET", apiHost + "/json/comments/", true);
 	req2.send();
 }
 

@@ -60,7 +60,7 @@ function loadPost() {
 	$("jsonLink2").href = "./json/post/comments/?id=" + postId + archiveTypeP;
 	req.open(
 		"GET",
-		"https://apis.bunnbuns.net/sa/json/post/?id=" + postId + archiveTypeP,
+		apiHost + "/json/post/?id=" + postId + archiveTypeP,
 		true
 	);
 	req.send();
@@ -94,7 +94,7 @@ req2.onreadystatechange = function () {
 function loadPostComments() {
 	$("comments").innerHTML = "Loading...";
 	$("commentsNum").innerHTML = "";
-	req2.open("GET", "https://apis.bunnbuns.net/sa/json/post/comments/?id=" + postId + archiveTypeP, true);
+	req2.open("GET", apiHost + "/json/post/comments/?id=" + postId + archiveTypeP, true);
 	req2.send();
 }
 
