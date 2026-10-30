@@ -56,8 +56,8 @@ req.onreadystatechange = function () {
 
 function loadPost() {
 	$("ogLink").href = "https://stibarc.com/post.html?id=" + postId;
-	$("jsonLink").href = apiHost + "./json/post/?id=" + postId + archiveTypeP;
-	$("jsonLink2").href = apiHost + "./json/post/comments/?id=" + postId + archiveTypeP;
+	$("jsonLink").href = apiHost + "/json/post/?id=" + postId + archiveTypeP;
+	$("jsonLink2").href = apiHost + "/json/post/comments/?id=" + postId + archiveTypeP;
 	req.open(
 		"GET",
 		apiHost + "/json/post/?id=" + postId + archiveTypeP,

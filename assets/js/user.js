@@ -56,7 +56,7 @@ req.onreadystatechange = function () {
 function loadUserPosts() {
     $("posts").innerHTML = "Loading...";
 	$("ogLink").href = "https://stibarc.com/user.html?id=" + username;
-	$("jsonLink").href = apiHost + "./json/user/";
+	$("jsonLink").href = apiHost + "/json/user/";
 	req.open(
 		"GET",
 		apiHost + "/sa/json/user/posts/?id=" + username + archiveTypeP,
